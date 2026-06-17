@@ -6,6 +6,7 @@ return {
       below = "",
       highlight = "",
     },
+    render_modes = { "n", "c", "t" },
   },
   config = function(_, opts)
     require("render-markdown").setup(opts)
