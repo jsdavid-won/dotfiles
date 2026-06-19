@@ -7,6 +7,7 @@ return {
         cssls = {},
         emmet_language_server = {},
       },
+      inlay_hints = { enabled = false },
     },
   },
 }
