@@ -4,6 +4,7 @@ return {
     mappings = {
       ["'"] = false,
       ['"'] = false,
+      ["`"] = false,
     },
   },
 }
