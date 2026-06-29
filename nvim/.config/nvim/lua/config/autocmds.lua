@@ -27,6 +27,13 @@ local function set_custom_highlights()
   vim.api.nvim_set_hl(0, "LineNr", { fg = "#939ab7" })
 end
 
--- Call function immediatley and once color scheme is set (no timing issues this way)
+-- Call function immediately and once color scheme is set (no timing issues this way)
 set_custom_highlights()
 vim.api.nvim_create_autocmd("ColorScheme", { callback = set_custom_highlights })
+
+-- Prevents behavior where creating a new line after a commented line produces another commented line
+vim.api.nvim_create_autocmd("FileType", {
+  callback = function()
+    vim.opt_local.formatoptions:remove({ "r", "o" })
+  end,
+})
